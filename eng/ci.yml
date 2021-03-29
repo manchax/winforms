@@ -133,6 +133,7 @@ stages:
         - script: powershell -ExecutionPolicy ByPass -NoProfile eng\common\msbuild.ps1
             -ci
             $(Build.SourcesDirectory)/eng/SendToHelix.proj
+            /p:Configuration=$(_BuildConfig)
             /p:Platform=x64
             /p:HelixSource=$(_HelixSource)
             /p:HelixTargetQueues=$(_HelixTargetQueues)
